@@ -14,13 +14,17 @@ def get_japanese_emoticon
   # code goes here
 end
 
-def get_english_meaning(emoticons_file, emoticon)
+def get_english_meaning(emoticons_file, emoticon_to_find)
   
-  emoticons = load_library(emoticons_file)
+  library = load_library(emoticons_file)
   
-  emoticons.each do |key, value|
-    
+  found_meaning = ""
+  
+  library.each do |meaning, language_hash|
+    if language_hash[:japanese] == emoticon_to_find
+      found_meaning = meaning
+    end
   end
   
-  
+  found_meaning
 end
