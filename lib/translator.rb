@@ -39,5 +39,9 @@ def get_english_meaning(emoticons_file, emoticon_to_find)
     end
   end
   
+  if found_meaning == ""
+    found_meaning = "Sorry, that emoticon was not found"
+  end
+  
   found_meaning
 end
